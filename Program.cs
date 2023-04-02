@@ -2,15 +2,17 @@
 {
     public class Program
     {
-        float[] work_day = new float[] { 0.0f, 0.0f, 0.0f, 0.0f};
+        //float[] work_day = new float[] { 0.0f, 0.0f, 0.0f, 0.0f};
+        float[] work_day = { 9f, 17f, 30f, 1.5f }; //$240
+
         string[] details = { "Start of Working Day", "End of the Working Day", "Hourly Rate","Overtime Multiplier" };
         static void Main(string[] args)
         {
             Program obj = new Program();    
-            obj.Get_Working();
+            //obj.Get_Working();
             obj.Calculate_Pay();
         }
-        public void Calculate_Pay()
+        public float Calculate_Pay()
         {
             float earn = 0.00f, extra = 0.00f, actual = 0.00f;
 
@@ -24,9 +26,12 @@
                 actual = (17.00f - work_day[0]) * work_day[2];
                 earn = actual + extra;
             }
-            Console.WriteLine($"Your earn that day is - ${earn}");
-            
+            //Console.WriteLine($"Your earn that day is - ${earn}");
+            Console.WriteLine(earn);
+            return earn;
+
         }
+        /*
         public void Get_Working()
         {
             Console.WriteLine("Enter the working hours in 24 format");
@@ -52,7 +57,8 @@
 
             Console.Write("Overtime Multiplier: ");
             work_day[3] = Convert.ToSingle(Console.ReadLine());
-            Console.WriteLine();*/
-        }
+            Console.WriteLine();
+        }*/
+    
     }
 }
